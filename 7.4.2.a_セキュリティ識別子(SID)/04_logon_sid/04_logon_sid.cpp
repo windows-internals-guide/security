@@ -52,7 +52,7 @@ int main()
 	LocalFree(pTokenGroups);
 	CloseHandle(hToken);
 
-	return 0;
+	return nExitCode;
 }
 
 BOOL CheckLogonSidAuthority(PSID pLogonSid)

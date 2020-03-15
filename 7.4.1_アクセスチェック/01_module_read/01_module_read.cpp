@@ -10,9 +10,9 @@ int main()
 
 	GetModuleFileName(NULL, szFileName, MAX_PATH);
 
-	hFile = CreateFile(szFileName, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+	hFile = CreateFile(szFileName, FILE_READ_ACCESS, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 	if (hFile == INVALID_HANDLE_VALUE) {
-		printf("ファイルをオープンできません。\n");
+		printf("ファイルをオープンできなかった %d", GetLastError());
 		return -1;
 	}
 
